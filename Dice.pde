@@ -1,5 +1,5 @@
 int result;
-Die diu= new Die(150,150);
+Die joe= new Die(150,150);
 void setup()
 {
   noLoop();
@@ -9,15 +9,17 @@ void setup()
 void draw()
 {
   int Sum=0;
-  background(0);
+  background(12,103,184);
   for(int y=50;y<550;y+=100){
     for(int x=50;x<550;x+=100){
-  Die diu= new Die(x,y);
-  diu.roll();
-  diu.show();
+  Die joe= new Die(x,y);
+  joe.roll();
+  joe.show();
   Sum= result+Sum;
     }
   }
+  textSize(20);
+  text("Sum: " + Sum, 300,580);
 }
 void mousePressed()
 {
@@ -28,7 +30,7 @@ class Die //models one single dice cube
   int myX,myY,Sum;
   Die(int x,int y) //constructor
   {
-    Sum=(int)((Math.random()*6)+1);
+    result=(int)((Math.random()*6)+1);
     myX=x;
     myY=y;
   }
@@ -39,34 +41,34 @@ class Die //models one single dice cube
   void show()
   { 
 
-    rect(myX,myY,80,80);
+    rect(myX,myY,80,80,15);
 
-    if(Sum==1){
+    if(result==1){
       ellipse(myX+40,myY+40,17,17);
     }
-    if(Sum==2){
+    if(result==2){
       ellipse(myX+40,myY+20,17,17);
       ellipse(myX+40,myY+60,17,17);
     }
-    if(Sum==3){
+    if(result==3){
       ellipse(myX+20,myY+20,17,17);
       ellipse(myX+40,myY+40,17,17);
       ellipse(myX+60,myY+60,17,17);
     }
-    if(Sum==4){
+    if(result==4){
       ellipse(myX+20,myY+20,17,17);
       ellipse(myX+60,myY+20,17,17);
       ellipse(myX+20,myY+60,17,17);
       ellipse(myX+60,myY+60,17,17);
     }
-    if(Sum==5){
+    if(result==5){
       ellipse(myX+20,myY+20,17,17);
       ellipse(myX+60,myY+20,17,17);
       ellipse(myX+20,myY+60,17,17);
       ellipse(myX+60,myY+60,17,17);
       ellipse(myX+40,myY+40,17,17);
     }
-    if(Sum==6){
+    if(result==6){
       ellipse(myX+20,myY+20,17,17);
       ellipse(myX+20,myY+40,17,17);
       ellipse(myX+20,myY+60,17,17);
