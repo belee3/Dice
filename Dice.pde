@@ -40,7 +40,9 @@ class Die //models one single dice cube
   }
   void show()
   { 
-
+    
+    fill((int)(Math.random()*255), (int)(Math.random()*255), (int)(Math.random()*255));
+    stroke((int)(Math.random()*255), (int)(Math.random()*255), (int)(Math.random()*255));
     rect(myX,myY,80,80,15);
 
     if(result==1){
